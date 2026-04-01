@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+}
+
+/* HEADER */
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #00ff88;
+}
+
+/* LOGIN BOX */
+input {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    background: #1e1e1e;
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #00ff88;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00cc6a;
+}
+
+/* CODE EDITOR */
+textarea {
+    width: 80%;
+    height: 300px;
+    background: #1e1e1e;
+    color: #00ff88;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+/* OUTPUT BOX */
+pre {
+    background: black;
+    color: lime;
+    padding: 10px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 10px;
+    min-height: 100px;
+    text-align: left;
+}
+
+/* CENTER LAYOUT */
+.container {
+    text-align: center;
+    margin-top: 20px;
+}

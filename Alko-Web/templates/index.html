@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HassanIDE</title>
+    <style>
+        body { background:#111; color:white; font-family:Arial; text-align:center; }
+        input, button { padding:10px; margin:5px; }
+        textarea { width:80%; height:200px; }
+    </style> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>HassanIDE Web</h1>
+
+<h3>Login</h3>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<br>
+<button onclick="login()">Login</button>
+<button onclick="register()">Register</button>
+
+<hr>
+
+<h3>Code Editor</h3>
+<textarea id="code"></textarea>
+<br>
+<button onclick="runCode()">Run (local demo)</button>
+
+<pre id="output"></pre>
+
+<script>
+async function login() {
+    let res = await fetch("/login", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            username: user.value,
+            password: pass.value
+        })
+    });
+
+    alert((await res.json()).status);
+}
+
+async function register() {
+    let res = await fetch("/register", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            username: user.value,
+            password: pass.value
+        })
+    });
+
+    alert((await res.json()).status);
+}
+
+function runCode() {
+    output.textContent = eval(code.value);
+}
+</script>
+
+</body>
+</html>
